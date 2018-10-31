@@ -11,7 +11,7 @@ while True:
     if op == '0':
         print('До свидания.')
         break
-    if op in ('+', '-', '*', '/'):
+    elif op in ('+', '-', '*', '/'):
         a = float(input('Введите число "А": '))
         b = float(input('Введите число "B": '))
         if op == '+':
@@ -20,7 +20,7 @@ while True:
             print(f'{a} - {b} = {a - b}\n')
         elif op == '*':
             print(f'{a} * {b} = {a * b}\n')
-        elif op == '/':
+        else:
             if b != 0:
                 print(f'{a} / {b} = {a / b}\n')
             else:
