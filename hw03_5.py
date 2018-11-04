@@ -11,16 +11,16 @@ for _ in range(ARRAY_LEN):
 
 print(f'Исходный массив: {array}')
 
-min = array[0]
+min_el = array[0]
 for i in array:
-    if i < min:
-        min = i
+    if i < min_el:
+        min_el = i
 
-if min < 0:
-    max = min
+if min_el < 0:
+    max_el = min_el
     for i in array:
-        if max < i < 0:
-            max = i
+        if max_el < i < 0:
+            max_el = i
     print(f'Максимальный отрицательный элемент: {max}, его позиция в массиве: {array.index(max)}.')
 else:
     print(f'В массиве нет отрицательных элементов.')
