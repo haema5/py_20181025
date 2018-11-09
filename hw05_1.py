@@ -27,7 +27,7 @@ for i in enterprises:
     if enterprises[i] > profit_avrg:
         print(f'\t- {i} ({enterprises[i]:.2f})')
 
-print(f'\nПредприятия с прибылью ниже среднего:')
+print('\nПредприятия с прибылью ниже среднего:')
 for i in enterprises:
     if enterprises[i] < profit_avrg:
         print(f'\t- {i} ({enterprises[i]:.2f})')
