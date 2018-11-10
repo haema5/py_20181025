@@ -9,8 +9,8 @@ from collections import deque
 
 
 def input_format(a, b):
-    num_1 = deque(a)
-    num_2 = deque(b)
+    num_1 = deque(str.upper(a))
+    num_2 = deque(str.upper(b))
     return num_1, num_2
 
 
@@ -38,23 +38,21 @@ def toHex(dec):
 
 
 def oper_sum(num_1, num_2):
-    result = toHex(toDec(num_1) + toDec(num_2))
-    result = [_ for _ in result]
+    result = deque(toHex(toDec(num_1) + toDec(num_2)))
     return result
 
 
 def oper_mul(num_1, num_2):
-    result = toHex(toDec(num_1) * toDec(num_2))
-    result = [_ for _ in result]
+    result = deque(toHex(toDec(num_1) * toDec(num_2)))
     return result
 
 
-a = str.upper(input('Введите число А (HEX): '))
-b = str.upper(input('Введите число B (HEX): '))
-
+a = input('Введите число А (HEX): ')
+b = input('Введите число B (HEX): ')
 num_1, num_2 = input_format(a, b)
+
 summ = oper_sum(num_1, num_2)
 mult = oper_mul(num_1, num_2)
 
-print(f'\n{[_ for _ in a]} + {[_ for _ in b]} = {summ};')
-print(f'{[_ for _ in a]} * {[_ for _ in b]} = {mult}.')
+print(f'\n{list(num_1)} + {list(num_2)} = {list(summ)};')
+print(f'{list(num_1)} * {list(num_2)} = {list(mult)}.')
