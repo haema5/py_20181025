@@ -37,13 +37,15 @@ def toHex(dec):
     return hexa[::-1]
 
 
-def oper_mul(num_1, num_2):
-    result = toHex(toDec(num_1) * toDec(num_2))
+def oper_sum(num_1, num_2):
+    result = toHex(toDec(num_1) + toDec(num_2))
+    result = [_ for _ in result]
     return result
 
 
-def oper_sum(num_1, num_2):
-    result = toHex(toDec(num_1) + toDec(num_2))
+def oper_mul(num_1, num_2):
+    result = toHex(toDec(num_1) * toDec(num_2))
+    result = [_ for _ in result]
     return result
 
 
@@ -54,5 +56,5 @@ num_1, num_2 = input_format(a, b)
 summ = oper_sum(num_1, num_2)
 mult = oper_mul(num_1, num_2)
 
-print(f'\nCумма чисел {a} и {b} = {summ};')
-print(f'Произведение чисел {a} и {b} = {mult}.')
+print(f'\n{[_ for _ in a]} + {[_ for _ in b]} = {summ};')
+print(f'{[_ for _ in a]} * {[_ for _ in b]} = {mult}.')
