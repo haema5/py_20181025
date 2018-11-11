@@ -14,7 +14,7 @@ def input_format(a, b):
     return num_1, num_2
 
 
-def toDec(hexa):
+def to_dec(hexa):
     hex_dec = {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9,
                'A': 10, 'B': 11, 'C': 12, 'D': 13, 'E': 14, 'F': 15}
     dec = 0
@@ -25,7 +25,7 @@ def toDec(hexa):
     return dec
 
 
-def toHex(dec):
+def to_hex(dec):
     dec_hex = {0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7', 8: '8', 9: '9',
                10: 'A', 11: 'B', 12: 'C', 13: 'D', 14: 'E', 15: 'F'}
     hexa = ''
@@ -38,12 +38,12 @@ def toHex(dec):
 
 
 def oper_sum(num_1, num_2):
-    result = deque(toHex(toDec(num_1) + toDec(num_2)))
+    result = deque(to_hex(to_dec(num_1) + to_dec(num_2)))
     return result
 
 
 def oper_mul(num_1, num_2):
-    result = deque(toHex(toDec(num_1) * toDec(num_2)))
+    result = deque(to_hex(to_dec(num_1) * to_dec(num_2)))
     return result
 
 
