@@ -11,16 +11,15 @@ ARRAY_LEN = 10
 def show_total_size(dictionary):
     def get_size(x):
         size = getsizeof(x)
-        if type(x) is int:
-            # print(f'Size of {x} = {size} bytes')
-            pass
-        elif type(x) is list:
+        if type(x) is list:
             # print(f'Size of {x} = {size} bytes')
             for i in x:
                 size_i = getsizeof(i)
                 size += size_i
             #     print(f'\tSize of {i} = {size_i} bytes')
             # print(f'\tОбщий размер массива = {size} bytes')
+        # elif type(x) is int:
+            # print(f'Size of {x} = {size} bytes')
         return size
 
     print('\nИспользуемые переменные: ')
