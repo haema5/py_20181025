@@ -77,7 +77,7 @@ def hw03_5(array):
                 max_el = i
         return max_el, array.index(max_el), show_total_size(locals())
     else:
-        return 'Ошибка. В массиве нет отрицательных элементов.'
+        return 'Ошибка. В массиве нет отрицательных элементов.', array, show_total_size(locals())
 
 
 # Второй способ:
@@ -87,7 +87,7 @@ def hw03_5_modify(array):
         max_el = max(new_arr)
         return max_el, array.index(max_el), show_total_size(locals())
     else:
-        return 'Ошибка. В массиве нет отрицательных элементов.'
+        return 'Ошибка. В массиве нет отрицательных элементов.', array, show_total_size(locals())
 
 
 array_1 = [randint(0, 99) for _ in range(ARRAY_LEN)]
