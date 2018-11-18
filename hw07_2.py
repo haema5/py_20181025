@@ -1,22 +1,47 @@
 # -*- coding: utf-8 -*-
-#  2. Отсортируйте по возрастанию методом слияния одномерный вещественный массив,
+# 2. Отсортируйте по возрастанию методом слияния одномерный вещественный массив,
 # заданный случайными числами на промежутке [0; 50). Выведите на экран исходный
 # и отсортированный массивы.
-import random
+from random import uniform
+
+MIN = 0
+MAX = 50
+ARRAY_LEN = 10
 
 
-def bubble_sort(array):
-    n = 1
-    trigger = True
-    while trigger:
-        trigger = False
-        for i in range(len(array) - n):
-            if array[i] < array[i + 1]:
-                array[i], array[i + 1] = array[i + 1], array[i]
-                trigger = True
-        n += 1
+def merge_sort(array):
+    if len(array) > 1:
+        splitter = len(array) // 2
+        left_half = array[:splitter]
+        right_half = array[splitter:]
+
+        merge_sort(left_half)
+        merge_sort(right_half)
+
+        n = 0
+        n1 = 0
+        n2 = 0
+        while n1 < len(left_half) and n2 < len(right_half):
+            if left_half[n1] < right_half[n2]:
+                array[n] = left_half[n1]
+                n1 += 1
+            else:
+                array[n] = right_half[n2]
+                n2 += 1
+            n += 1
+
+        while n1 < len(left_half):
+            array[n] = left_half[n1]
+            n1 += 1
+            n += 1
+
+        while n2 < len(right_half):
+            array[n] = right_half[n2]
+            n2 += 1
+            n += 1
+
     return array
 
 
-arr = [random.randint(0, 49) for _ in range(10)]
-print(f'Исходный массив:\n\t{arr} \nОтсортированный массив:\n\t{bubble_sort(arr)}')
+init_array = [uniform(MIN, MAX) for spam in range(ARRAY_LEN) if spam < MAX]
+print(f'Исходный массив:\n\t{init_array} \nОтсортированный массив:\n\t{merge_sort(init_array)}')

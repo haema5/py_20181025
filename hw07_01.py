@@ -2,7 +2,11 @@
 # 1. Отсортировать по убыванию методом «пузырька» одномерный целочисленный массив,
 # заданный случайными числами на промежутке [-100; 100). Вывести на экран исходный
 # и отсортированный массивы.
-import random
+from random import randint
+
+MIN = -100
+MAX = 99
+ARRAY_LEN = 10
 
 
 def bubble_sort(array):
@@ -18,5 +22,5 @@ def bubble_sort(array):
     return array
 
 
-arr = [random.randint(-100, 99) for _ in range(10)]
-print(f'Исходный массив:\n\t{arr} \nОтсортированный массив:\n\t{bubble_sort(arr)}')
+init_array = [randint(MIN, MAX) for _ in range(ARRAY_LEN)]
+print(f'Исходный массив:\n\t{init_array} \nОтсортированный массив:\n\t{bubble_sort(init_array)}')
