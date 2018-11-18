@@ -2,10 +2,9 @@
 # 2. Отсортируйте по возрастанию методом слияния одномерный вещественный массив,
 # заданный случайными числами на промежутке [0; 50). Выведите на экран исходный
 # и отсортированный массивы.
-from random import uniform
+from random import random
 
-MIN = 0.0
-MAX = 50.0
+MAX = 50
 ARRAY_LEN = 10
 
 
@@ -43,5 +42,5 @@ def merge_sort(array):
     return array
 
 
-init_array = [uniform(MIN, MAX) for _ in range(ARRAY_LEN)]
+init_array = [random() * MAX for _ in range(ARRAY_LEN)]
 print(f'Исходный массив:\n\t{init_array} \nОтсортированный массив:\n\t{merge_sort(init_array)}')
