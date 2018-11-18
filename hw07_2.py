@@ -4,8 +4,8 @@
 # и отсортированный массивы.
 from random import uniform
 
-MIN = 0
-MAX = 50
+MIN = 0.0
+MAX = 50.0
 ARRAY_LEN = 10
 
 
@@ -43,5 +43,5 @@ def merge_sort(array):
     return array
 
 
-init_array = [uniform(MIN, MAX) for spam in range(ARRAY_LEN) if spam < MAX]
+init_array = [uniform(MIN, MAX) for _ in range(ARRAY_LEN)]
 print(f'Исходный массив:\n\t{init_array} \nОтсортированный массив:\n\t{merge_sort(init_array)}')
