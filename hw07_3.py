@@ -34,8 +34,30 @@ def find_median(array):
     return median
 
 
+def find_median_wo_sort(array):
+    if len(array) > 1:
+        for i in array:
+            less_i = 0
+            more_i = 0
+            for n in array:
+                if n < i:
+                    less_i += 1
+                elif n > i:
+                    more_i += 1
+                else:
+                    less_i += 1
+                    more_i += 1
+            if less_i == more_i:
+                return i
+    else:
+        return array[0]
+
+
 m = randint(0, 10)
 array_len = 2 * m + 1
 init_array = [randint(MIN, MAX) for _ in range(array_len)]
 
-print(f'm = {m}\nИсходный массив: {init_array}\nМедиана: {find_median(init_array)}')
+print(
+    f'm = {m}\nИсходный массив: {init_array}'
+    f'\nМедиана: {find_median(init_array)}, '
+    f'\nМедиана (без сортировки): {find_median_wo_sort(init_array)}')
