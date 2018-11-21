@@ -7,10 +7,7 @@
 from random import choices
 from string import ascii_lowercase
 
-
-def create_string(size):
-    string = ''.join(choices(ascii_lowercase, k=size))
-    return string
+N = 100
 
 
 def find_substrings(string):
@@ -26,5 +23,5 @@ def find_substrings(string):
     return subs
 
 
-s = create_string(100)
+s = ''.join(choices(ascii_lowercase, k=N))
 print(f'Исходная строка: {s}\n\nКоличество различных подстрок: {find_substrings(s)}')
