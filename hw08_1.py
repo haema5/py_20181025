@@ -11,17 +11,18 @@ N = 100
 
 
 def find_substrings(string):
-    diff_subs = []
+    diff_subs = set()
     len_str = len(string)
     for i in range(1, len_str):
         for j in range(0, len_str - i + 1):
             sub_string = string[j:j + i]
             hash_sub = hash(sub_string)
             if hash_sub not in diff_subs:
-                diff_subs.append(hash_sub)
+                diff_subs.add(hash_sub)
     subs = len(diff_subs)
     return subs
 
 
 s = ''.join(choices(ascii_lowercase, k=N))
+# s = 'papa'
 print(f'Исходная строка: {s}\n\nКоличество различных подстрок: {find_substrings(s)}')
